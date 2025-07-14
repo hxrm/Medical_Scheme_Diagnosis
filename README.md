@@ -1,10 +1,10 @@
 ## Analysis Plan 
-The objective of this analysis is to create a linear regression model to accurately predictive insurance charges for a medical scheme member. The predictions will be based the observed selection of lifestyle factors for a client. Namly factors such as age, sex, BMI, number of children, smoking habits and geographical region. 
+The analysis will include steps to understanding the implication of different medical and lifestyle factors on a positive cancer diagnosis. This will allow for insights into factors that are both significant and irrelevant to the likelihood positive cancer diagnosis. However, mainly will enable a model to be built that will accurately classify an individual as having cancer or not having cancer, according to the datasets target variable (no cancer, cancer)
 The analysis will include steps to understanding both the individual and combined implication of lifestyle factor on insurance charges for a medical scheme member. Will uncover the lifestyle factors that are both significant and irrelevant to the increase in insurance chargers and primarily build a model to generate insurance chargers. 
 ## Explanatory Data Analysis (EDA): 
 Data exploration is a crucial step that needs to be taken before attempting to build a model. EDA helps an analysist to understand the given data. The EDA process identifies issues that may affect machine learning, ensures that data will be of suitable quality and identifies key patterns and trends that may need to be taken into consideration when building a predictive model (Ray, 2024). Various functions from the Pandas, Seaborn and Matplotlib libraries will be used to assist the EDA process. The EDA will include the following steps.
 
-**Data Collection** : The first step to analysing the data is to retrieve it from the given csv file. The `Pandas.read_csv()` method will be used to read the data from the file and store is within a Pandas data frame object. The Pandas data frames can hold huge amount of data in excel like format, making it ideal to store insurance dataset and perform data manipulation (NumFOCUS Inc, 2024). 
+**Data Collection** : The first step to analysing the data is to retrieve it from the given csv file. The `Pandas.read_csv()` method will be used to read the data from the file and store is within a Pandas data frame object. The Pandas data frames can hold huge amount of data in excel like format, making it ideal to store the dataset and perform data manipulation (NumFOCUS Inc, 2024). 
 
 **Data Cleaning**: To help ensure data quality missing vales, duplicates and inconsistencies in data types must be handled.
 - Missing Values:` panda.isnull().sum()` will be used to search the dataset and return the sum of missing values for each column. Identified values will either be dropped or replaced with relevant columns average.
@@ -33,19 +33,19 @@ Preprocessing are the final tasks that must be carried out to ensure that the da
 **Splitting data**: Data will be split before input into model. The data will be split into an 80:20 ratio, 80 percent of the data being used as training data and the remaining 20 percent for test data. This is an important step so that after training the model can be tested on unseen data to assess its performance (Gillis, 2024). 
 
 ## Build and Evaluate Model
-**Model training**: The models used for this analysis will be the Scikit-learn Linear Regression model and Lasso Regression model. Linear Regression model has been selected as the native model to apply a linear regression algorithm. Lasso selected for its built-in feature selection capabilities (Orange Data Mining Library, 2015). 
+**Model training**: The models used for this analysis will be the Scikit-learn Logistic Regression model. 
 
-**Evaluation**: To evaluate the performance of the models, the Scikit-learn library will be used. The library contains a metrics methods that provide the coefficient of determination (R^2) , mean absolute error and mean squared error for the results or prediction of a trained model (Deepanshi, 2023; Kim, 2023)  These metrics can be used to assess the performance and accuracy of a model.
+**Evaluation**: To evaluate the performance of the models, the Scikit-learn library will be used. The library contains a metrics method that provide the classification model performance metrics, such as accuracy, precision, recall, and f1 score (Martin Ward Powers, 2011). These metrics can be used to assess the performance and accuracy of a model.
 
-**Visualisation of results**: Seaborn and Matplotlib will be used to display the result (Deepanshi, 2023; KIm, 2023). Plots such as  
-- True vs Predicted Values, to compare predictions to actual datapoint and assess linearity   
-- Residuals vs Predicted Values, to assess the Homoscedasticity of model of model results. 
-- Normal Q-Q Residual Plot, to assess if residuals are normally distributed
+**Visualisation of results**: Seaborn and Matplotlib will be used to display the result (Deepanshi, 2023; KIm, 2023). Plots such as: 
+- Confusion matrix, to assess a classification models performance, by comparing the predicted values against the actual values (Murel and Kavlakoglu, 2024b).
+- Precision Recall Curve, to assess the performance of a model, by analysing its ability to predict the positive class. This plot is used to assess the performance of a classification model when the target variable imbalanced (Tripathi, 2022).
+
 
 ## Exploratory Data Analysis
 **Data Collection**: The data was first retrieved form the given csv file using `Pandas.read_csv()` method as displayed in figure 1. The data was stored in a Pandas data frame, theses data frames are able to store large amount of data in excel like format, making it ideal to store insurance dataset and perform data manipulation (NumFOCUS Inc, 2024). The `Pandas.head()` method was used to confirm data was successfully retrieved and assess rows and columns of the data. 
 <div align="center">
-  <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/08258570-b652-4127-912e-7a8e754e4c03" />
+	  <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/cbf4b852-51dc-42cc-bb94-fee8b9f94999" />
   <br>
   <em>Figure 1: Storing Data</em>
 </div>
@@ -54,32 +54,33 @@ Preprocessing are the final tasks that must be carried out to ensure that the da
 
 
 <div align="center">
-  <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/12f82654-4767-46c7-857b-1a33086ca356" />
+  <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/d70a516a-c47d-43b8-8230-75b138d60908" />
+
   <br>
   <em>Figure 1: Missing Values</em>
 </div>
-To find duplicates in data `panda.duplicated()` method was used to identify and create a list of all duplicates within the dataset. The list of duplicates returned one duplicate found in the in row 581 of the dataset as shown below in figure 3. This row was dropped from the dataset to avoid bias in the model. 
-<div align="center">
-	  <img width="700" height="120" alt="image" src="https://github.com/user-attachments/assets/fa881c86-b712-44fe-8ae4-1a020edec4bf" />
+To find duplicates in data `panda.duplicated()` method was used to identify and create a list of all duplicates within the dataset.The dataset did not contain duplicate values. This can be seen in figure 3 below.  
+<div align="center">	
+	  <img width="700" height="120" alt="image" src="https://github.com/user-attachments/assets/5b0d8d15-0bd1-46db-8dc7-5ee9b8c2a06c" />
 	<br>
-  <em>Figure 1: Duplicates </em>
+  <em>Figure 3: Duplicates </em>
 </div>
 
-To identify the data types `panda.info()` method called. The method returned the below information about the dataset features. The method found that the 7 features within the dataset was a combination of ints, floats and objects, as shown in below in figure 4. 
+To identify the data types `panda.info()`. The method returned the below information about the dataset features. The method found 9 features within the dataset, which were a combination of ints and floats, as shown in below in figure 4. 
 - 2 of the columns, age and children are int datatypes and therefore suitable for a machine learning algorithms input. 
-- 2 of the columns, charges and BMI are floats datatypes are too suitable as input for machine learning algorithms 
-- 3 of the column’s datatypes are objects or string values which need to be converted to numerical values for to be used as input for the machine learning algorithms    
+- 2 of the columns, charges and BMI are floats datatypes are too suitable as input for machine learning algorithms.
+- 3 of the column’s datatypes are objects or string values which need to be converted to numerical values for to be used as input for the machine learning algorithms.
 <div align="center">
-	<img width="800" height="321" alt="image" src="https://github.com/user-attachments/assets/c964d985-8efe-4ad1-8aa7-1579925bc6b1" />
+	<img width="800" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
 	<br>
   <em>Figure 4: Datatypes </em>
 </div>
 
-**Data Transformation**: To use machine learning algorithms, all data must be in numerical form, either float or int data types. The categorical features found, sex, smoker and region, are stored as the object data type therefore they were encoded. LabelEncoder from the Scikit-learn preprocessing module to encode the features by mapping each feature to a numbers value. These numbers were then you to distinguish the different categories as seen below in figure 5 (Novogroder, 2024). 
+**Check Outliers**:  The dataset was checked for outliers using the quartile method. Each continuous feature was passed through a for loop which calculated the upper and lower quantile for the feature. No outliers were found in the dataset, this can be seen below in figure 5.
 <div align="center">
-	<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/7e86cc33-1bdf-4c53-8169-0b1e0d2b1486" />
+	<img width="700" height="200" a alt="image" src="https://github.com/user-attachments/assets/0e609af9-d58e-43df-863d-13a749d94f8e" />
 	<br>
-  <em>Figure 5: Encoding </em>
+  <em>Figure 5: Check Outliers</em>
 </div>
 
 **Univariate Analysis**  
@@ -87,7 +88,7 @@ This stage of analysis focused on analysing individual features in the dataset. 
 Figure 6 displays the descriptive statistics:
 
 <div align="center">
-  <img width="800" height="429" alt="Descriptive Stats" src="https://github.com/user-attachments/assets/e8c99772-6b1b-4036-a4af-49463234d732" />
+	  <img width="800" height="429" alt="image" src="https://github.com/user-attachments/assets/d6b82538-6fe0-423c-ad9f-eee3fbc87eb0" />
   <br />
   <em>Figure 6: Descriptive Statistics</em>
 </div>
@@ -95,16 +96,16 @@ Figure 6 displays the descriptive statistics:
 ---
 
 - **Age Feature**:  
-  The mean (39.20) is very close to the median (39), indicating a symmetrical distribution. The standard deviation (14.0) suggests moderate variability. The 25th and 75th percentiles (27 and 64) confirm that 50% of members are aged between 27 and 64 years.
+The mean (50.32) is very close to the median (51.00), this suggests the distribution of data is approximately symmetrical. The std (17.64) is moderate relative to the mean, inferring a moderate variability within the datasets spread of age. This variability is supported by the 25th and 75th percentiles, which displays 50% of individual's age falls between 35 and 66 years old. Thus, the dataset contains a wide spread of ages, with majority of individuals middle-aged to old.
 
 - **BMI**:  
-  The mean (30.6) is close to the median (30.4), indicating symmetry. The standard deviation (6.09) indicates low variability. 50% of members have a BMI between 26.29 and 34.69. The max value (53.1) suggests outliers are present.
+BMI's mean (27.51) and median (27.60) are also in close proximity. This suggests the distribution of data is approximately symmetrical. Further, on average individuals are overweight. The std (7.23) is low considering the features mean, implying low variability within the spread of dataset feature. This variability is supported by the 25th and 75th percentiles, which shows that 50% of individuals BMI falls between 21.48 and 33.85. Thus, majority of individuals in the dataset are overweight to obese.
 
-- **Children**:  
-  The mean (1.09) is higher than the median (1.0), suggesting a positive skew likely caused by the max value of 5 children. The standard deviation (1.2) indicates moderate variability. 50% of members have between 0 and 2 children.
+- **Physical Activity: **:  
+The mean (4.89) and median (4.83) are in close proximity. This suggests a near symmetrical distribution of data. Additional, on average individuals spend 4 hours physical active. The std (2.87) is moderate relative the features mean, indicating moderate variability in the spread of data. Furthermore, the min (0.00) and max (10.00) indicate activity ranges from inactive to highly active.  This variability is supported by the 25th and 75th percentiles, which indicates that 50% of individuals are physical active for 2.43 to 7.40 hours per day. Thus, the dataset contains wide range of physical activity, with a moderate portion of individuals sedentary to highly active.
 
 - **Charges**:  
-  The mean ($13,270) is much higher than the median ($9,382), indicating a positively skewed distribution. The standard deviation ($12,110) shows high variability. 50% of members pay between $4,740 and $16,639. The max value ($63,770) suggests the presence of outliers.
+The mean (2.42) and median (2.38) are in close vicinity, on average individuals consume approx.  2.5 units of alcohol a week. This suggests a near symmetrical distribution of data. The std (1.41) is moderate relative the mean, indicating moderate variability within the spread of data. The min value is 0.00 and max 5, signalling alcohol behaviour ranges from sober to indulgent.  The 25th and 75th percentiles supporters the variability, which indicates 50% of individuals drink 1.21 to 3.59 unit of alcohol a week. Thus, majority of individuals in the dataset have a moderate alcohol Intake.
 
 
 
@@ -115,57 +116,53 @@ Univariate analysis for categorical features was carried out using visualisation
   <em>Figure 7: Smokers Count Plot</em>
 </div>
 
+Univariate analysis for categorical features was carried out using visualisation tools from seaborn and matplotlib. Seaborn count plots were used to understand the distribution genetic risk, cancer history, smoking and gender in the dataset. The below figure 7 shows the count plot for genetic risk levels in the dataset. The count plot illustrates the frequency distribution of genetic cancer risk within the 1500 individual’s sample. The plot indicates, majority of individuals fall into the low-risk category (approx. 900). The moderate amount (approx. 450) of individuals are categorized as medium risk and s small subset (approx. 150) are categorized as high risk.
 
-**Bivariate Analysis**: This stage of analysis focuses on uncovering the association and distribution between two variables. To understand the relationship between two variables visualisation tools such as seaborn and matplotlib will be used to create correlation heatmaps, pair plots, distribution plots and scatterplots. 
 <div align="center">
-	<img width="600" height="500"  alt="image" src="https://github.com/user-attachments/assets/d09228d4-cc9a-4b25-87ca-fb1231cc0b9d"  />
+	<img width="844" height="579" alt="image" src="https://github.com/user-attachments/assets/15c4d5c4-793e-48c0-9964-43f06529a13c" />
+	<br>
+  <em>Figure 7: Genetic Risk Distribution</em>
+</div>
+
+**Multivariate Analysis**: This stage of analysis focuses on uncovering the association and distribution between variables in the dataset. To understand the relationship between two variables visualisation tools such as seaborn and matplotlib will be used to create correlation heatmaps, pair plots and distribution plots. 
+<div align="center">
+	<img width="749" height="587" alt="image" src="https://github.com/user-attachments/assets/ecc2d75b-98ed-4589-ba0f-bcd42f1dfe6f" />
 	<br>
   <em>Figure 8: Correlation Heatmap</em>
 </div>
-Figure 8 above display a correlation heat map. This was used to shows the correlation between all variables in a dataset. The Pandas method `dataframe.corr()` is used to calculate the correlation coefficient for each variable in the dataset (NumFOCUS Inc, 2025). The method returns a float between 1 and -1, indicating the correlation between each pair of variables (NumFOCUS Inc, 2025). 1 indicates perfect correlation, 0 indicates no correlation and -1 perfect negative correlation. This visual the matrix of correlations using the seaborn heatmap (Jain, 2024).  
+Figure 8 above display a correlation heat map. This was used to shows the correlation between all variables in a dataset. The Pandas method "dataframe.corr()" is used to calculate the correlation coefficient for each variable in the dataset ((NumFOCUS Inc, 2025)). The method returns a float between 1 and -1, indicating the correlation between each pair of variables (NumFOCUS Inc, 2025). 1 indicates perfect correlation, 0 indicates no correlation and -1 perfect negative correlation. This visual the matrix of correlations using the seaborn heatmap (Jain, 2024).   
 
 ---
 
 **Notable insights were**:
-- The charges variable is positively correlated with age, BMI and children variables. Each of these variables have a positive linear relationship with the target variable. Therefore, for an increase in any one of the variables charges will increase too.
-- The correlation heat map confirms minimal correlation between independent variables, indicating that there is no multicollinearity that will contradict the multicollinearity assumption of linear regression.
-- 0.79 highest correlation between a pair of variables. It defines a strong positive linear relationship between smoker and charges variables.
-With the strongest correlation between features smoker and charges, I was led to more thoroughly investigate the correlation between smoker and charges and further, the influence smoker and charges may have on other features in the dataset.
-
-The below plot provides in figure 9 shows an in-depth view of the distribution of insurance charges for both smokers and non-smokers. 
+- Diagnosis has a weak positive correlation with Cancer History, Alcohol Intake, Smoking, Gender, Age, BMI and Genetic Risk features. If one of these categorical features are true (yes=1), the likelihood of a positive cancer diagnosis increases.
+- Diagnosis has a weak negative correlation with Physical Activity. For member that are physical activity in the day, there is a slightly lower chance of a positive cancer diagnosis
+- 0.39 is the highest correlation between Diagnosis and Cancer History. However, it is a moderate correlation.
 
 <div align="center">
-	<img width="600" height="530" alt="image" src="https://github.com/user-attachments/assets/f48b977f-a21f-45d7-927b-deb1c6633444" />
+	<img width="749" height="587" alt="image" src="https://github.com/user-attachments/assets/ecc2d75b-98ed-4589-ba0f-bcd42f1dfe6f" />
 	<br>
-  <em>Figure 9: Charges Distribution by Smoker Status</em>
+  <em>Figure 9:Smoking Status by Cancer Diagnosis</em>
 </div>
 
+The below plot provides in figure 9  provides an insight into the distribution of smoking and a non-smoking individual, according their cancer diagnosis.
 ---
-
-*Smokers (Peach)*:
-- The plot show there are fewer members with smoking status within the dataset. The bars representing smoker, do not exceed 25 on the y-axis showing a significant difference in the count for smoking vs non-smoking members. 
-- The graph shows a bimodal distribution, with peaks approximately falling between $10,000 to $30,000 and $30,000 to $60,000. This distribution suggests that other features may have a strong contribution to a decrease in the charged insurance fee despite smoking status (Frost, 2022).\ 
-*Smokers (Blue)*:
-- The plot show that most members in dataset are of non-smoking status. The bars representing non-smoker, ranges across all values on the y-axis showing a significant difference in the count for smoking vs non-smoking members. 
-- the graph shows a right skewed distribution, with non-smoking members incurring charges of $1,121 (min value) to approximately $15 000. The upper tail of the non-smoking curve does fall within higher charge rate, indicating that there are features may have a strong contribution to an increase in the charged insurance fee despite smoking status.  
-
-The plot of Charges Distribution by Smoker Status, confirmed the strength of the correlation between smoker and the rate of charge, uncovered correlation heatmap (figure 10). Thus confirming the smoking status of a member is a significant in the charges incurred by a member. 
-
-
-**Multivariate Analysis**: multivariate analysis extends the bivariate analysis by further investigating the significant finding. In this can the correlation between smoker and the charged rate of members. The analysis stage was aimed at understanding the relationship between multiple variables. Tools from seaborn and matplotlib will be used to visualise the relations between variables. Plots such as distribution plots and scatterplots will carry out this stage (Deepanshi, 2023; Kim, 2023). 
-The bar plot in figure 10, provides an insight into the distribution of insurance charges for both smokers according to sex.
 <div align="center">
-	<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/b7fa3e40-9698-4a64-a906-e56d6b6350ee" />
+	<img width="879" height="636" alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
 	<br>
   <em>Figure 10: Average Charges for Smokers and Non-Smokers</em>
 </div>
+Non-smoker:  
+- The bar for non-smokers displays, a greater proportion of individuals have a negative cancer diagnosis and a smaller subset a positive cancer diagnosis.
+- For the smoker population, 762 individuals do not have cancer (green), while 334 individuals do have cancer (blue).
+- This indicates that non-smokers are more likely to have a negative cancer diagnosis.
 
----
+Smoker:
+- The bar for smoker’s displays, a greater proportion of individuals have a positive cancer diagnosis, while a smaller subset a negative cancer diagnosis
+- For the smoker population of 404, 223 individuals have cancer (blue), and 181 individuals do not have cancer (green).
+- There is a small difference (42) between a positive cancer diagnosis and a negative cancer diagnosis, this indicates that smoking has a potential association with a have a slightly higher probability of a positive diagnosis.   
 
-- Non-smoker: For both male and female members, lower insurance charges are incurred by non-smokers
-- Smoker: For both male and female members, higher insurance charges are incurred by smokers.
-High and low insurance rates are charges for both females and males, therefore the sex of a member when concerning charges are indifferent.This indicated that the sex of a member had no significant influence on the rate of charges on a member. 
-
+Observations suggests that smoking status has a possible association of a positive cancer diagnosis. However, there is a small difference (111) between non-smoking and smoking individuals that have cancer. Therefore, smoking may not be a strong predictor for cancer.
 
 The below scatter plots in figure 11, provides an insight into the distribution of insurance charges across member’s age. Separated by smoking status. The below plots were intended to further to further investigate the influence of chargers and smoking status in the dataset.
 <div align="center">
