@@ -71,7 +71,7 @@ To identify the data types `panda.info()`. The method returned the below informa
 - 2 of the columns, charges and BMI are floats datatypes are too suitable as input for machine learning algorithms.
 - 3 of the column’s datatypes are objects or string values which need to be converted to numerical values for to be used as input for the machine learning algorithms.
 <div align="center">
-	<img width="800" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
+	<img width="600" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
 	<br>
   <em>Figure 4: Datatypes </em>
 </div>
@@ -108,14 +108,6 @@ The mean (4.89) and median (4.83) are in close proximity. This suggests a near s
 The mean (2.42) and median (2.38) are in close vicinity, on average individuals consume approx.  2.5 units of alcohol a week. This suggests a near symmetrical distribution of data. The std (1.41) is moderate relative the mean, indicating moderate variability within the spread of data. The min value is 0.00 and max 5, signalling alcohol behaviour ranges from sober to indulgent.  The 25th and 75th percentiles supporters the variability, which indicates 50% of individuals drink 1.21 to 3.59 unit of alcohol a week. Thus, majority of individuals in the dataset have a moderate alcohol Intake.
 
 
-
-Univariate analysis for categorical features was carried out using visualisation tools from seaborn and matplotlib. Seaborn count plots were used to understand the distribution sex, region, charges and smokers in the dataset. The below figure 7 shows the count plot for smokers and non-smokers members in the dataset. The counter plot indicates that the number of members who are non-smoke in the dataset is greater than the number of smokers in the dataset.
-<div align="center">
-	<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/79508759-2d21-43ed-93fa-d9dea6c9bbb3" />
-	<br>
-  <em>Figure 7: Smokers Count Plot</em>
-</div>
-
 Univariate analysis for categorical features was carried out using visualisation tools from seaborn and matplotlib. Seaborn count plots were used to understand the distribution genetic risk, cancer history, smoking and gender in the dataset. The below figure 7 shows the count plot for genetic risk levels in the dataset. The count plot illustrates the frequency distribution of genetic cancer risk within the 1500 individual’s sample. The plot indicates, majority of individuals fall into the low-risk category (approx. 900). The moderate amount (approx. 450) of individuals are categorized as medium risk and s small subset (approx. 150) are categorized as high risk.
 
 <div align="center">
@@ -138,20 +130,16 @@ Figure 8 above display a correlation heat map. This was used to shows the correl
 - Diagnosis has a weak positive correlation with Cancer History, Alcohol Intake, Smoking, Gender, Age, BMI and Genetic Risk features. If one of these categorical features are true (yes=1), the likelihood of a positive cancer diagnosis increases.
 - Diagnosis has a weak negative correlation with Physical Activity. For member that are physical activity in the day, there is a slightly lower chance of a positive cancer diagnosis
 - 0.39 is the highest correlation between Diagnosis and Cancer History. However, it is a moderate correlation.
-
-<div align="center">
-	<img width="749" height="587" alt="image" src="https://github.com/user-attachments/assets/ecc2d75b-98ed-4589-ba0f-bcd42f1dfe6f" />
-	<br>
-  <em>Figure 9:Smoking Status by Cancer Diagnosis</em>
-</div>
-
-The below plot provides in figure 9  provides an insight into the distribution of smoking and a non-smoking individual, according their cancer diagnosis.
 ---
+The below plot provides in figure 9  provides an insight into the distribution of smoking and a non-smoking individual, according their cancer diagnosis.
 <div align="center">
 	<img width="879" height="636" alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
 	<br>
   <em>Figure 10: Average Charges for Smokers and Non-Smokers</em>
 </div>
+
+---
+
 Non-smoker:  
 - The bar for non-smokers displays, a greater proportion of individuals have a negative cancer diagnosis and a smaller subset a positive cancer diagnosis.
 - For the smoker population, 762 individuals do not have cancer (green), while 334 individuals do have cancer (blue).
@@ -164,22 +152,28 @@ Smoker:
 
 Observations suggests that smoking status has a possible association of a positive cancer diagnosis. However, there is a small difference (111) between non-smoking and smoking individuals that have cancer. Therefore, smoking may not be a strong predictor for cancer.
 
-The below scatter plots in figure 11, provides an insight into the distribution of insurance charges across member’s age. Separated by smoking status. The below plots were intended to further to further investigate the influence of chargers and smoking status in the dataset.
+The bar plot in figure 11, provides an insight into the distribution of genetic risk levels, according to cancer diagnosis.
 <div align="center">
-	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/4feb7708-ceca-4b82-81ef-7fd85c581bf1" />
-	<br>
-  <em>Figure 11: Charges vs Age (Smokers and Non-Smokers)</em>
+	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/1d794596-6ac1-4854-82d8-b4832e5a7b7a" />	<br>
+  <em>Figure 11: Genetic Risk by Cancer Diagnosis </em>
 </div>
 
 ---
 
-Scatter plot 1 (Charge vs age by Non-Smoking Members): 
-- By plotting a regression line, a positive correlation between age and charges can be observed for non-smoking members. This indicates the insurance charge for a member increase with their age. Therefore, younger members receive lower rates than older members.
-Scatter plot 2 (Charge vs age by Smoking Members):
-- Similarly, a plotted regression line, plot 2 shows a positive correlation between age and charges for smoking members. The plot indicates the insurance charge for a member increase with their age. However, the rates for smoking members are much larger as the line is plotted higher up on the y-axis compared to plot 1. Therefore, members that smoke incur higher rates both young and old members.
-- Another insight from the second plot is gathered from the separation is clusters. Although the data point follow a linear trend, they are clustered separately in the lower and upper regions of the y-axis. This separation implies that there is another lifestyle factors or factors that cause this variation and thereby contribute to higher charge rates.
+Low Risk:
+- The bar for low genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
+- For the low-risk population, 282 individuals have cancer (blue), and 613 individuals do not have cancer (green).
+- This indicates that individuals with a low genetic risk are more likely to have a negative cancer diagnosis.  
+Medium Risk:
+- The bar for medium genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
+- For the medium risk population, 142 individuals have cancer (blue), and 305 individuals do not have cancer (green).
+- This indicates that individuals with a medium genetic risk are more likely to have a negative cancer diagnosis.   
+High Risk:
+- The bar for high genetic risk shows a greater proportion of individuals have a positive cancer diagnosis, while a smaller subset a negative cancer diagnosis.
+- For the high risk population of 158 , 133 individuals have cancer (blue), and 25 individuals do not have cancer (green).
+- There is a sizeable difference (108) between individuals who have cancer and do not. This suggests that high genetic risk has a potential association with positive cancer diagnosis.
 
-These finding indicates that there is a positive correlation between the age and charge features in the dataset, suggesting that age too has significance in the rate of charge for a member. When combined with the smoking feature, the rate of charges becomes even larger. 
+Observations suggests that low and medium genetic risk may not be strong predictors for cancer. However, high genetic risk shows a strong association with cancer and may be a strong predictor.
 
 The below scatter plots in figure 12, provides an insight into the distribution of insurance charges across member BMI. Separated by smoking status. The below plots were intended to further to further investigate the influence of chargers and smoking status in the dataset.
 <div align="center">
@@ -190,14 +184,47 @@ The below scatter plots in figure 12, provides an insight into the distribution 
 
 ---
 
-Scatter plot 1 (Charge vs BMI of non-smoking members): 
-- By plotting a regression line, a moderate positive correlation can be observed between BMI and charges for non-smoking members. This indicates the insurance charge of a member increases with a higher BMI. Therefore, overweight and obese members receive higher charges.
-Scatter plot 2 (Charge vs BMI of smoking members):
-- Similarly, a plotted regression line, plot 2 shows a strong positive correlation between BMI and charges for smoking members. The plot indicates the insurance charges for a member increase with higher BMI. However, the rates for smoking members are more extreme. Therefore, the combination of smoking and a high BMI result in high insurance rates.  
-With highlighting the smoking status of members, a linear relationship become clear. There is a positive relationship between BMI and charges, however the smoking status determines stronger degree of influence between the variables. 
+The below distribution plots in figure 12, provide insight into the distribution 'Physical Activity' by 'Cancer' diagnosis.
+<div align="center">
+	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/11c8eb2e-9628-4d81-9ac5-7459f6f28301" />
+	<br>
+  <em>Figure 12: Physical Activity Distribution by Cancer Diagnosis</em>
+</div>
 
-These finding suggesting that BMI feature has significance influence on the rate of charge for a member. When combined with the smoking feature, the rate of charges becomes even larger. 
-The finding from the EDA conclude that features BMI, smoker and age have and influence on the dependent variable, charges. 
+---
+
+No Cancer (Green): 
+- The distribution for 'No Cancer’ spans the full range of on the x-axis (0 to 10 hr/day). This is seen by the widespread distribution with flattened peaks.
+- The distribution of the plot has two slight peaks, falling at approximately 4.5 to 5.5 hours and 8.3 to 9.5 hours.  This suggests a higher density of moderate to highly active individuals.
+- The distribution is slightly skewed to the left. Peaks are at higher physical activity range and a long tail extends towards lower levels of activity.
+- The plot suggests that individuals with no cancer have moderate to high physical activity level.
+Cancer (Red):
+- The distribution for 'Cancer' also spans the full range of on the x-axis (0 to 10 hr/day).
+- In contrast, the distribution has a defined peak concentrated at low levels of activity. Ranging from approximately 0 to 2.5 hours of activity. This suggests a higher density of individuals with low physical activity.
+- The distribution is right-skewed, as the peak is at a low physical activity range and a long tail extends towards higher levels of activity.
+- The plot suggests that individuals with cancer have low levels of physical activity.
+The no cancer distribution (red) compared to cancer distribution (green) is denser in higher ranges of activity. Furthermore, the cancer distribution (green) is highly concentrated around low levels of activity. Observations suggest that lower level of physical activity are  associated with cancer and may be a strong predictor.
+
+The below distribution plots in figure 13, provide insight into the distribution 'BMI' by 'Cancer' diagnosis.
+<div align="center">
+	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/fa8e20bc-da87-415e-bec3-b9d462a3de30" />
+	<br>
+  <em>Figure 12: BMI Distribution by Cancer Diagnosis</em>
+</div>
+
+---
+No Cancer (Green):
+- The distribution for 'No Cancer’s spans all BMI values on the x-axis (0 to 40). This is seen by the widespread distribution.
+- The distribution of the plot has a broad peak, concentrated at a BMI range of approximately 17 to 24. This indicates a higher density of individuals that are underweight and healthy.
+- The distribution is right-skewed, as peaks are at lower BMI ranges and a long tail extends towards the higher range. This indicates less individuals with a high BMI.
+- The right skewed distribution suggests individuals with no cancer are more likely to have a lower BMI. 
+Cancer (Red) 
+- The distribution for 'Cancer' is also spans across all values on the x-axis (0 to 40). Seen by the widespread distribution.
+- The distribution has a broader peak concentrated at higher BMI ranges. The peak fall at BMI's of approximately 26 to 36. This indicates a higher density of individuals that are overweight and obese.
+- The distribution is skewed to the left, as peaks are at a high BMI range and a long tail extends towards the lower range. This indicates less individuals with a low BMI.
+- The left skewed distribution suggests individuals with cancer are more likely to have a higher BMI. 
+Individuals with cancer tend to be overweight or obese. Observations suggest that a higher BMI is associated with cancer and may be a strong predictor.
+
 
 **Pre Processing**: The final tasks carried out before training the model included scaling, encoding and splitting data to ensure that the model performs well (Novogroder, 2024). Various modules from the Scikit-learn library were used to prepare the data for processing.
 
