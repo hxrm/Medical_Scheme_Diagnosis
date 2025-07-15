@@ -55,14 +55,13 @@ Preprocessing are the final tasks that must be carried out to ensure that the da
 
 <div align="center">
   <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/d70a516a-c47d-43b8-8230-75b138d60908" />
-
-  <br>
+	<br>
   <em>Figure 1: Missing Values</em>
 </div>
 
 To find duplicates in data `panda.duplicated()` method was used to identify and create a list of all duplicates within the dataset.The dataset did not contain duplicate values. This can be seen in figure 3 below.  
 <div align="center">	
-	  <img width="700" height="120" alt="image" src="https://github.com/user-attachments/assets/5b0d8d15-0bd1-46db-8dc7-5ee9b8c2a06c" />
+	  <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/5b0d8d15-0bd1-46db-8dc7-5ee9b8c2a06c" />
 	<br>
   <em>Figure 3: Duplicates </em>
 </div>
