@@ -71,7 +71,7 @@ To identify the data types `panda.info()`. The method returned the below informa
 - 2 of the columns, charges and BMI are floats datatypes are too suitable as input for machine learning algorithms.
 - 3 of the column’s datatypes are objects or string values which need to be converted to numerical values for to be used as input for the machine learning algorithms.
 <div align="center">
-	<img width="670" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
+	<img width="550" height="350" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
 	<br>
   <em>Figure 4: Datatypes </em>
 </div>
@@ -101,7 +101,7 @@ The mean (50.32) is very close to the median (51.00), this suggests the distribu
 - **BMI**:  
 BMI's mean (27.51) and median (27.60) are also in close proximity. This suggests the distribution of data is approximately symmetrical. Further, on average individuals are overweight. The std (7.23) is low considering the features mean, implying low variability within the spread of dataset feature. This variability is supported by the 25th and 75th percentiles, which shows that 50% of individuals BMI falls between 21.48 and 33.85. Thus, majority of individuals in the dataset are overweight to obese.
 
-- **Physical Activity: **:  
+- **Physical Activity**:  
 The mean (4.89) and median (4.83) are in close proximity. This suggests a near symmetrical distribution of data. Additional, on average individuals spend 4 hours physical active. The std (2.87) is moderate relative the features mean, indicating moderate variability in the spread of data. Furthermore, the min (0.00) and max (10.00) indicate activity ranges from inactive to highly active.  This variability is supported by the 25th and 75th percentiles, which indicates that 50% of individuals are physical active for 2.43 to 7.40 hours per day. Thus, the dataset contains wide range of physical activity, with a moderate portion of individuals sedentary to highly active.
 
 - **Charges**:  
@@ -111,14 +111,14 @@ The mean (2.42) and median (2.38) are in close vicinity, on average individuals 
 Univariate analysis for categorical features was carried out using visualisation tools from seaborn and matplotlib. Seaborn count plots were used to understand the distribution genetic risk, cancer history, smoking and gender in the dataset. The below figure 7 shows the count plot for genetic risk levels in the dataset. The count plot illustrates the frequency distribution of genetic cancer risk within the 1500 individual’s sample. The plot indicates, majority of individuals fall into the low-risk category (approx. 900). The moderate amount (approx. 450) of individuals are categorized as medium risk and s small subset (approx. 150) are categorized as high risk.
 
 <div align="center">
-	<img width="844" height="579" alt="image" src="https://github.com/user-attachments/assets/15c4d5c4-793e-48c0-9964-43f06529a13c" />
+	<img width="800" height="535" alt="image" src="https://github.com/user-attachments/assets/15c4d5c4-793e-48c0-9964-43f06529a13c" />
 	<br>
   <em>Figure 7: Genetic Risk Distribution</em>
 </div>
 
 **Multivariate Analysis**: This stage of analysis focuses on uncovering the association and distribution between variables in the dataset. To understand the relationship between two variables visualisation tools such as seaborn and matplotlib will be used to create correlation heatmaps, pair plots and distribution plots. 
 <div align="center">
-	<img width="749" height="587" alt="image" src="https://github.com/user-attachments/assets/ecc2d75b-98ed-4589-ba0f-bcd42f1dfe6f" />
+	<img width="759" height="588" alt="image" src="https://github.com/user-attachments/assets/ecc2d75b-98ed-4589-ba0f-bcd42f1dfe6f" />
 	<br>
   <em>Figure 8: Correlation Heatmap</em>
 </div>
@@ -155,21 +155,21 @@ Observations suggests that smoking status has a possible association of a positi
 
 The bar plot in figure 11, provides an insight into the distribution of genetic risk levels, according to cancer diagnosis.
 <div align="center">
-	<img width="700"  height="500" alt="image" src="https://github.com/user-attachments/assets/1d794596-6ac1-4854-82d8-b4832e5a7b7a" />	<br>
+	<img width="560"  height="500" alt="image" src="https://github.com/user-attachments/assets/1d794596-6ac1-4854-82d8-b4832e5a7b7a" />	<br>
   <em>Figure 11: Genetic Risk by Cancer Diagnosis </em>
 </div>
 
 ---
 
-Low Risk:
+### Low Risk:
 - The bar for low genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
 - For the low-risk population, 282 individuals have cancer (blue), and 613 individuals do not have cancer (green).
 - This indicates that individuals with a low genetic risk are more likely to have a negative cancer diagnosis.  
-Medium Risk:
+### Medium Risk:
 - The bar for medium genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
 - For the medium risk population, 142 individuals have cancer (blue), and 305 individuals do not have cancer (green).
 - This indicates that individuals with a medium genetic risk are more likely to have a negative cancer diagnosis.   
-High Risk:
+### High Risk:
 - The bar for high genetic risk shows a greater proportion of individuals have a positive cancer diagnosis, while a smaller subset a negative cancer diagnosis.
 - For the high risk population of 158 , 133 individuals have cancer (blue), and 25 individuals do not have cancer (green).
 - There is a sizeable difference (108) between individuals who have cancer and do not. This suggests that high genetic risk has a potential association with positive cancer diagnosis.
@@ -223,7 +223,7 @@ Individuals with cancer tend to be overweight or obese. Observations suggest tha
 
 Feature Selection: Feature selection was performed by `sklearn.selectKBest()` SelectKBest was used with the `mutual_info_classif` parameter and a max output of 7. The method selected the best based upon the F-value, which indicates the variance between each feature and the dependent variable. The features are scored according to the significance of their variance (Kavya D, 2023). The selected features can be seen below in figure 15.
 <div align="center">
-	<img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/aae127f6-7913-4698-be09-a217e97b8749" />
+	<img width="300" height="280" alt="image" src="https://github.com/user-attachments/assets/aae127f6-7913-4698-be09-a217e97b8749" />
 	<br>
   <em>Figure 15: Selected Features</em>
 </div> 
@@ -246,6 +246,9 @@ To evaluate the performance of the models, the Scikit-learn library will be used
 	<br>
   <em>Figure 18: Model Results</em>
 </div> 
+
+---
+
 | Metric     | Description |
 |------------|-------------|
 | **Accuracy**  | The model correctly predicted the diagnosis for **82%** of all instances (both cancer = 1 and no cancer = 0). |
@@ -261,6 +264,9 @@ The model was also evaluated using cross validation, using a KFold. The below fi
   <em>Figure 19: KFold  Results</em>
 </div> 
 The cross validation indicates that the model’s performance remains consistent across different fold of data. Therefore, model can generalise well on unseen data.
+
+---
+
 | Metric     | Description |
 |------------|-------------|
 | **Accuracy**  | The model correctly predicted the diagnosis for **82%** of all instances (both cancer = 1 and no cancer = 0). |
@@ -275,6 +281,9 @@ A confusion matrix is used to assess a classification models performance, by com
 	<br>
   <em>Figure 19: KFold  Results</em>
 </div> 
+
+---
+
 - True Positive (TP)(Top-left box): The model was able to correctly predict 782 instances of a positive cancer diagnosis.
 782 individuals who did have cancer were correctly identified as having cancer.
 - False Negative (FN)(Top-right box): The model incorrectly predicted 162 instances of a negative cancer diagnosis.162 individuals who had cancer were misclassified, as not having cancer. 
@@ -290,6 +299,8 @@ The Precision-Recall Curve was used to assess the performance of a model, by ana
 	<br>
   <em>Figure 19: KFold  Results</em>
 </div> 
+
+---
 
 - The x-axis represents recall, the proportion of the positive class that was correctly predicted.
 - The y-axis represents precision, the total number of the positive class that model has predicted.
