@@ -134,7 +134,7 @@ Figure 8 above display a correlation heat map. This was used to shows the correl
 ---
 The below plot provides in figure 9  provides an insight into the distribution of smoking and a non-smoking individual, according their cancer diagnosis.
 <div align="center">
-	<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
+	<img width="560"  height="500"  alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
 	<br>
   <em>Figure 10: Average Charges for Smokers and Non-Smokers</em>
 </div>
