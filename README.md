@@ -294,7 +294,7 @@ A confusion matrix is used to assess a classification models performance, by com
 
 The Precision-Recall Curve was used to assess the performance of a model, by analysing its ability to predict the positive class. This makes it useful for unbalanced datasets. The Precision-Recall Curve evaluates the relationship between precision and recall at different thresholds, from 0 to 1. The curve is plotted by estimates of precision-recall pair at these various thresholds. To provide insight into the trade-off between the two metrics. This assists in selecting the best threshold that balances precision and recall in the model (Lyzer, 2024). As seen the below figure 26.
 <div align="center">
-	<img width="700" height="711" alt="image" src="https://github.com/user-attachments/assets/d8cd76fb-d9ad-4b53-a075-ffd076a3d12e" />
+	<img width="600" height="611" alt="image" src="https://github.com/user-attachments/assets/d8cd76fb-d9ad-4b53-a075-ffd076a3d12e" />
 	<br>
   <em>Figure 19: KFold  Results</em>
 </div> 
