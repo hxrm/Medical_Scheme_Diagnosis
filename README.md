@@ -59,6 +59,7 @@ Preprocessing are the final tasks that must be carried out to ensure that the da
   <br>
   <em>Figure 1: Missing Values</em>
 </div>
+
 To find duplicates in data `panda.duplicated()` method was used to identify and create a list of all duplicates within the dataset.The dataset did not contain duplicate values. This can be seen in figure 3 below.  
 <div align="center">	
 	  <img width="700" height="120" alt="image" src="https://github.com/user-attachments/assets/5b0d8d15-0bd1-46db-8dc7-5ee9b8c2a06c" />
@@ -71,7 +72,7 @@ To identify the data types `panda.info()`. The method returned the below informa
 - 2 of the columns, charges and BMI are floats datatypes are too suitable as input for machine learning algorithms.
 - 3 of the column’s datatypes are objects or string values which need to be converted to numerical values for to be used as input for the machine learning algorithms.
 <div align="center">
-	<img width="600" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
+	<img width="670" height="321" alt="image" src="https://github.com/user-attachments/assets/7af62f02-222e-42a1-9fa1-617b26672e2e" />
 	<br>
   <em>Figure 4: Datatypes </em>
 </div>
@@ -122,7 +123,8 @@ Univariate analysis for categorical features was carried out using visualisation
 	<br>
   <em>Figure 8: Correlation Heatmap</em>
 </div>
-Figure 8 above display a correlation heat map. This was used to shows the correlation between all variables in a dataset. The Pandas method "dataframe.corr()" is used to calculate the correlation coefficient for each variable in the dataset ((NumFOCUS Inc, 2025)). The method returns a float between 1 and -1, indicating the correlation between each pair of variables (NumFOCUS Inc, 2025). 1 indicates perfect correlation, 0 indicates no correlation and -1 perfect negative correlation. This visual the matrix of correlations using the seaborn heatmap (Jain, 2024).   
+
+Figure 8 above display a correlation heat map. This was used to shows the correlation between all variables in a dataset. The Pandas method `dataframe.corr()` is used to calculate the correlation coefficient for each variable in the dataset ((NumFOCUS Inc, 2025)). The method returns a float between 1 and -1, indicating the correlation between each pair of variables (NumFOCUS Inc, 2025). 1 indicates perfect correlation, 0 indicates no correlation and -1 perfect negative correlation. This visual the matrix of correlations using the seaborn heatmap (Jain, 2024).   
 
 ---
 
@@ -133,7 +135,7 @@ Figure 8 above display a correlation heat map. This was used to shows the correl
 ---
 The below plot provides in figure 9  provides an insight into the distribution of smoking and a non-smoking individual, according their cancer diagnosis.
 <div align="center">
-	<img width="879" height="636" alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
+	<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/1a25f59c-1548-4672-88d9-78343faf2208" />
 	<br>
   <em>Figure 10: Average Charges for Smokers and Non-Smokers</em>
 </div>
@@ -154,7 +156,7 @@ Observations suggests that smoking status has a possible association of a positi
 
 The bar plot in figure 11, provides an insight into the distribution of genetic risk levels, according to cancer diagnosis.
 <div align="center">
-	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/1d794596-6ac1-4854-82d8-b4832e5a7b7a" />	<br>
+	<img width="700"  height="500" alt="image" src="https://github.com/user-attachments/assets/1d794596-6ac1-4854-82d8-b4832e5a7b7a" />	<br>
   <em>Figure 11: Genetic Risk by Cancer Diagnosis </em>
 </div>
 
@@ -175,14 +177,6 @@ High Risk:
 
 Observations suggests that low and medium genetic risk may not be strong predictors for cancer. However, high genetic risk shows a strong association with cancer and may be a strong predictor.
 
-The below scatter plots in figure 12, provides an insight into the distribution of insurance charges across member BMI. Separated by smoking status. The below plots were intended to further to further investigate the influence of chargers and smoking status in the dataset.
-<div align="center">
-	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/1bc119ef-af57-40b0-bfe4-b26ca3aa2602" />
-	<br>
-  <em>Figure 12: Charge vs BMI (Non-smoking and Smoking)</em>
-</div>
-
----
 
 The below distribution plots in figure 12, provide insight into the distribution 'Physical Activity' by 'Cancer' diagnosis.
 <div align="center">
@@ -228,68 +222,81 @@ Individuals with cancer tend to be overweight or obese. Observations suggest tha
 
 **Pre Processing**: The final tasks carried out before training the model included scaling, encoding and splitting data to ensure that the model performs well (Novogroder, 2024). Various modules from the Scikit-learn library were used to prepare the data for processing.
 
-Data scaling: The Scikit `StandardScaler()` methods was used to scale features within the dataset in preparation for model training. This was to ensure larger values such as BMI and Age did not have disproportionate significance in the model which would result in inaccurate predictions.
+Feature Selection: Feature selection was performed by `sklearn.selectKBest()` SelectKBest was used with the `mutual_info_classif` parameter and a max output of 7. The method selected the best based upon the F-value, which indicates the variance between each feature and the dependent variable. The features are scored according to the significance of their variance (Kavya D, 2023). The selected features can be seen below in figure 15.
 <div align="center">
-	<img width="480" height="175" alt="image" src="https://github.com/user-attachments/assets/631dba8f-0415-4110-ae91-c1d78e6d44ba" />
+	<img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/aae127f6-7913-4698-be09-a217e97b8749" />
 	<br>
-  <em>Figure 13: Scaled Data</em>
-</div>
-  
-Feature Selection: Feature selection will be performed by both backward elimination and `sklearn.selectKBest()` to compare results. SelectKBest was used with the `f_regression` parameter and a max output of 3. The method selected the best based upon the F-value, which indicates the variance between each feature and the dependent variable. The features are scored according to the significance of their variance (Kavya D, 2023). Backward elimination selects the best features based upon the p-value which indicates probability of a features significance. The best features for selections by removing features that are not significant (GeeksforGeeks, 2025b).  Both methods nominated the same features, smoker, age and BMI. Which are consistent with EDA finding, the results are shown below in figure 14.
-<div align="center">
-	<img width="600" height="220" alt="image" src="https://github.com/user-attachments/assets/d632494e-3355-4a9a-b4cc-0ad9d37be4fb" />
-	<br>
-  <em>Figure 14: Scaled Data</em>
+  <em>Figure 15: Selected Features</em>
 </div> 
 
-Splitting data: The data used for model training was split into an 80:20 ratio, 80 percent of the data being used as training data and the remaining 20 percent for test data. This is an important step so that after training the model can be tested on unseen data to assess its performance (Gillis, 2024). The selected features sex, BMI and age were used to train the model. 
+Data scaling: The Scikit `StandardScaler()` methods was used to scale features within the dataset in preparation for model training. This was to ensure larger values such as BMI, Age and Alcohol Intake did not have disproportionate significance in the model which would result in inaccurate predictions. A pipeline was used to standardised and train the model.
 
-
-## Build and Evaluate Model
-The models used for this analysis will be the Scikit-learn Linear Regression model and Lasso Regression model. Linear Regression model has been selected as the native model to apply a linear regression algorithm. Lasso selected for its built-in feature selection capabilities, which is a result of the regularization (Orange Data Mining Library, 2015). The lasso model adds a penalty to the cost function to reduce the coefficients for each variable. The degree of the regulation is controlled by the alpha parameter. Due to regularization convergence in the gradient of descent happens as a slower rate, for this reason the tolerance threshold for convergence must either be decreased or the max iterations increased to for the model to perform well (Orange Data Mining Library, 2015).For these reasons the lasso model had been trained an alpha of 10 and a tolerance of 0,0001, as seen below in figure 15. 
-<div align="center">
-	<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/4927b5d0-7ebb-456a-a224-2a9f988e5111" />
-	<br>
-  <em>Figure 15: Lasso Model</em>
-</div> 
-
-To evaluate the performance of the models, the Scikit-learn library will be used. The library contains a metrics method that provide the coefficient of determination (R^2) , mean absolute error and mean squared error for the results or prediction of a trained model (Deepanshi, 2023; Kim, 2023). The result indicate the Lasso Regression model has a better performance than the Linear regression as seen below on figure 16 and 17. 
-<div align="center" style="display: flex; justify-content: center; gap: 20px;">
-  <div>
-    <img width="450" height="124" alt="Lasso Results" src="https://github.com/user-attachments/assets/0c31dcee-c179-44ec-95d8-cfb490909bef" />
-    <p><em>Figure 16: Lasso Results</em></p>
-  </div>
-  <div>
-    <img width="450" height="113" alt="Linear Results" src="https://github.com/user-attachments/assets/7b30d2bf-b710-4f4b-a6c8-9d99c67fea70" />
-    <p><em>Figure 17: Linear Results</em></p>
-  </div>
-</div>
-
-The coefficient of determination (R^2)  for the Lasso model of 0.78 is close 1 well the Linear model falls slightly lower. This implies, that 78% percent variance is explained by the model.  The mean absolute error of the lasso model indicates that results deviated by $4192.78 
-
---- 
-
-### True vs Predicted Values, to compare predictions to actual datapoint and assess linearity
-<div align="center">
-<img width="700" height="509" alt="image" src="https://github.com/user-attachments/assets/17150aa2-22aa-4316-9959-99f1ede6f0e0" />
-	<br>
-</div> 
+Splitting data: The data used for model training was split into a 75:25 ratio, 75 percent of the data being used as training data and the remaining 25 percent for test data. This is an important step so that after training the model can be tested on unseen data to assess its performance (Gillis, 2024). random state of 23 was used to ensure reproducibility and the stratify parameter was used to class distribution is preserved in both training and testing sets
 
 ---
 
-### Residuals vs Predicted Values, to assess the Homoscedasticity of model of model result
+**Build and Evaluate Model**:The classification model trained and built using the Scikit-learn Logistic Regression model. A pipeline was used to standardised and then train the model. The model was trained using the `class_weight='balanced` parameter. This was to account for imbalanced target variable, Diagnosis. This allowed the model to assign appropriate weights to each classification during the training process, to help reduce bias towards No cancer as the majority classification.
+
+To evaluate the performance of the models, the Scikit-learn library will be used. The library contains a metrics method to that provide classification model performance metrics, such as accuracy, precision, recall, and f1 score (Martin Ward Powers, 2011).  Figure 18 show the results of the model.
+- Accuracy: The score is a measure of the model’s overall ability to produce correct predictions. It calculates the ratio of correct predictions over the total number of predictions made (Martin Ward Powers, 2011).
+- Precision: This score is an indication of the model’s ability to correctly produce and identify positive predictions. The measure evaluates the number of true positive predictions out of all the prediction that were classified as positive (Martin Ward Powers, 2011). 
+- Recall: This score is an indication of how well the model can identify positive classifications. The measure evaluates the number of actual positive outcomes that were correctly predicted as positive by the model (Martin Ward Powers, 2011).
+- F1-score: This score combined the average precision and recall. Effectively the model balances he precision and recall. It evaluates the overall performance of a model when the positive and negative classifications are unbalanced (Martin Ward Powers, 2011). 
 <div align="center">
-	<img width="700" height="493" alt="image" src="https://github.com/user-attachments/assets/df95edec-5b2b-41fd-96fa-3c0486a6b2bd" />
+	<img width="396" height="228" alt="image" src="https://github.com/user-attachments/assets/3ce5e907-1ebc-4baa-8a59-f3fda995d6e5" />
 	<br>
+  <em>Figure 18: Model Results</em>
+</div> 
+| Metric     | Description |
+|------------|-------------|
+| **Accuracy**  | The model correctly predicted the diagnosis for **82%** of all instances (both cancer = 1 and no cancer = 0). |
+| **Precision** | Out of all predicted positive cancer diagnoses, **75%** were actually correct (cancer = 1). |
+| **Recall**    | The model correctly identified **79%** of actual positive cancer cases (cancer = 1). |
+| **F1-score**  | The F1 score of **76%** indicates a good balance between correctly identifying positive cancer diagnoses and limiting false positives. |
+
+The model was also evaluated using cross validation, using a KFold. The below figure 19 shows the results.
+
+<div align="center">
+	<img width="940" height="381" alt="image" src="https://github.com/user-attachments/assets/d5cb5138-b606-4333-8e4a-5896cf1d4e3c" />
+	<br>
+  <em>Figure 19: KFold  Results</em>
+</div> 
+The cross validation indicates that the model’s performance remains consistent across different fold of data. Therefore, model can generalise well on unseen data.
+| Metric     | Description |
+|------------|-------------|
+| **Accuracy**  | The model correctly predicted the diagnosis for **82%** of all instances (both cancer = 1 and no cancer = 0). |
+| **Precision** | Out of all predicted positive cancer diagnoses, **74%** were actually correct (cancer = 1). |
+| **Recall**    | The model correctly identified **82%** of actual positive cancer cases (cancer = 1). |
+| **F1-score**  | The F1 score of **77%** indicates a good balance between correctly identifying positive cancer diagnoses and limiting false positives. |
+
+
+A confusion matrix is used to assess a classification models performance, by comparing the predicted values against the actual values. In a grid, it displays the number of incorrect and correct predictions made by the model.  Which enables a visual illustration of the model performance evaluation metrics, such as accuracy, recall, precision and F1 score (Murel and Kavlakoglu, 2024). Seen in figure 20 below. 
+<div align="center">
+	<img width="686" height="548" alt="image" src="https://github.com/user-attachments/assets/0666802a-1f73-462a-a1f1-2fcd0af59f38" />
+	<br>
+  <em>Figure 19: KFold  Results</em>
+</div> 
+- True Positive (TP)(Top-left box): The model was able to correctly predict 782 instances of a positive cancer diagnosis.
+782 individuals who did have cancer were correctly identified as having cancer.
+- False Negative (FN)(Top-right box): The model incorrectly predicted 162 instances of a negative cancer diagnosis.162 individuals who had cancer were misclassified, as not having cancer. 
+- False Positive (FP)(Bottom-left box)The model incorrectly predicted 102 instances of a positive cancer diagnosis.
+102 individuals who did not have cancer were misclassified, as having cancer
+- True Negative (TN)(Bottom-right box) 
+The model was able to correctly predict 455 instances of a negative cancer diagnosis.
+455 individuals who did not have cancer were correctly identified as not having cancer.
+
+The Precision-Recall Curve was used to assess the performance of a model, by analysing its ability to predict the positive class. This makes it useful for unbalanced datasets. The Precision-Recall Curve evaluates the relationship between precision and recall at different thresholds, from 0 to 1. The curve is plotted by estimates of precision-recall pair at these various thresholds. To provide insight into the trade-off between the two metrics. This assists in selecting the best threshold that balances precision and recall in the model (Lyzer, 2024). As seen the below figure 26.
+<div align="center">
+	<img width="700" height="711" alt="image" src="https://github.com/user-attachments/assets/d8cd76fb-d9ad-4b53-a075-ffd076a3d12e" />
+	<br>
+  <em>Figure 19: KFold  Results</em>
 </div> 
 
----
+- The x-axis represents recall, the proportion of the positive class that was correctly predicted.
+- The y-axis represents precision, the total number of the positive class that model has predicted.
+- The plots shows that the model has a high precision even as recall increases, only dropping off at very high recall. The area under the curve is large, this indicates the model performance well.
 
-### Normal Q-Q Residual Plot, to assess if residuals are normally distributed
-<div align="center">
-	<img width="700" height="503" alt="image" src="https://github.com/user-attachments/assets/115f80b0-1e66-4a88-afce-dcfa1d0b472d" />
-	<br>
-</div> 
+Based on the performance results, this model will be able to accurately predict the likelihood of a member having cancer or not. The model will therefore enable the medical scheme to apply the dreaded disease benefits in an effective manner.
 
 
 ## References
