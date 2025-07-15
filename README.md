@@ -1,4 +1,4 @@
-## Analysis Plan 
+# Analysis Plan 
 The analysis will include steps to understanding the implication of different medical and lifestyle factors on a positive cancer diagnosis. This will allow for insights into factors that are both significant and irrelevant to the likelihood positive cancer diagnosis. However, mainly will enable a model to be built that will accurately classify an individual as having cancer or not having cancer, according to the datasets target variable (no cancer, cancer)
 The analysis will include steps to understanding both the individual and combined implication of lifestyle factor on insurance charges for a medical scheme member. Will uncover the lifestyle factors that are both significant and irrelevant to the increase in insurance chargers and primarily build a model to generate insurance chargers. 
 ## Explanatory Data Analysis (EDA): 
@@ -42,7 +42,7 @@ Preprocessing are the final tasks that must be carried out to ensure that the da
 - Precision Recall Curve, to assess the performance of a model, by analysing its ability to predict the positive class. This plot is used to assess the performance of a classification model when the target variable imbalanced (Tripathi, 2022).
 
 
-## Exploratory Data Analysis
+# Exploratory Data Analysis
 **Data Collection**: The data was first retrieved form the given csv file using `Pandas.read_csv()` method as displayed in figure 1. The data was stored in a Pandas data frame, theses data frames are able to store large amount of data in excel like format, making it ideal to store insurance dataset and perform data manipulation (NumFOCUS Inc, 2024). The `Pandas.head()` method was used to confirm data was successfully retrieved and assess rows and columns of the data. 
 <div align="center">
 	  <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/cbf4b852-51dc-42cc-bb94-fee8b9f94999" />
@@ -141,12 +141,12 @@ The below plot provides in figure 9  provides an insight into the distribution o
 
 ---
 
-Non-smoker:  
+#### Non-smoker:  
 - The bar for non-smokers displays, a greater proportion of individuals have a negative cancer diagnosis and a smaller subset a positive cancer diagnosis.
 - For the smoker population, 762 individuals do not have cancer (green), while 334 individuals do have cancer (blue).
 - This indicates that non-smokers are more likely to have a negative cancer diagnosis.
 
-Smoker:
+#### Smoker:
 - The bar for smoker’s displays, a greater proportion of individuals have a positive cancer diagnosis, while a smaller subset a negative cancer diagnosis
 - For the smoker population of 404, 223 individuals have cancer (blue), and 181 individuals do not have cancer (green).
 - There is a small difference (42) between a positive cancer diagnosis and a negative cancer diagnosis, this indicates that smoking has a potential association with a have a slightly higher probability of a positive diagnosis.   
@@ -179,19 +179,19 @@ Observations suggests that low and medium genetic risk may not be strong predict
 
 The below distribution plots in figure 12, provide insight into the distribution 'Physical Activity' by 'Cancer' diagnosis.
 <div align="center">
-	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/11c8eb2e-9628-4d81-9ac5-7459f6f28301" />
+	<img width="600"  height="400" alt="image" src="https://github.com/user-attachments/assets/11c8eb2e-9628-4d81-9ac5-7459f6f28301" />
 	<br>
   <em>Figure 12: Physical Activity Distribution by Cancer Diagnosis</em>
 </div>
 
 ---
 
-No Cancer (Green): 
+#### No Cancer (Green): 
 - The distribution for 'No Cancer’ spans the full range of on the x-axis (0 to 10 hr/day). This is seen by the widespread distribution with flattened peaks.
 - The distribution of the plot has two slight peaks, falling at approximately 4.5 to 5.5 hours and 8.3 to 9.5 hours.  This suggests a higher density of moderate to highly active individuals.
 - The distribution is slightly skewed to the left. Peaks are at higher physical activity range and a long tail extends towards lower levels of activity.
 - The plot suggests that individuals with no cancer have moderate to high physical activity level.
-Cancer (Red):
+#### Cancer (Red):
 - The distribution for 'Cancer' also spans the full range of on the x-axis (0 to 10 hr/day).
 - In contrast, the distribution has a defined peak concentrated at low levels of activity. Ranging from approximately 0 to 2.5 hours of activity. This suggests a higher density of individuals with low physical activity.
 - The distribution is right-skewed, as the peak is at a low physical activity range and a long tail extends towards higher levels of activity.
@@ -200,18 +200,18 @@ The no cancer distribution (red) compared to cancer distribution (green) is dens
 
 The below distribution plots in figure 13, provide insight into the distribution 'BMI' by 'Cancer' diagnosis.
 <div align="center">
-	<img width="700"  height="400" alt="image" src="https://github.com/user-attachments/assets/fa8e20bc-da87-415e-bec3-b9d462a3de30" />
+	<img width="600"  height="400" alt="image" src="https://github.com/user-attachments/assets/fa8e20bc-da87-415e-bec3-b9d462a3de30" />
 	<br>
   <em>Figure 12: BMI Distribution by Cancer Diagnosis</em>
 </div>
 
 ---
-No Cancer (Green):
+#### No Cancer (Green):
 - The distribution for 'No Cancer’s spans all BMI values on the x-axis (0 to 40). This is seen by the widespread distribution.
 - The distribution of the plot has a broad peak, concentrated at a BMI range of approximately 17 to 24. This indicates a higher density of individuals that are underweight and healthy.
 - The distribution is right-skewed, as peaks are at lower BMI ranges and a long tail extends towards the higher range. This indicates less individuals with a high BMI.
 - The right skewed distribution suggests individuals with no cancer are more likely to have a lower BMI. 
-Cancer (Red) 
+#### Cancer (Red) 
 - The distribution for 'Cancer' is also spans across all values on the x-axis (0 to 40). Seen by the widespread distribution.
 - The distribution has a broader peak concentrated at higher BMI ranges. The peak fall at BMI's of approximately 26 to 36. This indicates a higher density of individuals that are overweight and obese.
 - The distribution is skewed to the left, as peaks are at a high BMI range and a long tail extends towards the lower range. This indicates less individuals with a low BMI.
