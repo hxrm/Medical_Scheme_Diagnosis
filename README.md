@@ -161,15 +161,15 @@ The bar plot in figure 11, provides an insight into the distribution of genetic 
 
 ---
 
-### Low Risk:
+#### Low Risk:
 - The bar for low genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
 - For the low-risk population, 282 individuals have cancer (blue), and 613 individuals do not have cancer (green).
 - This indicates that individuals with a low genetic risk are more likely to have a negative cancer diagnosis.  
-### Medium Risk:
+#### Medium Risk:
 - The bar for medium genetic risk shows a greater proportion of individuals have a negative cancer diagnosis, while a smaller subset a positive cancer diagnosis.
 - For the medium risk population, 142 individuals have cancer (blue), and 305 individuals do not have cancer (green).
 - This indicates that individuals with a medium genetic risk are more likely to have a negative cancer diagnosis.   
-### High Risk:
+#### High Risk:
 - The bar for high genetic risk shows a greater proportion of individuals have a positive cancer diagnosis, while a smaller subset a negative cancer diagnosis.
 - For the high risk population of 158 , 133 individuals have cancer (blue), and 25 individuals do not have cancer (green).
 - There is a sizeable difference (108) between individuals who have cancer and do not. This suggests that high genetic risk has a potential association with positive cancer diagnosis.
@@ -284,13 +284,12 @@ A confusion matrix is used to assess a classification models performance, by com
 
 ---
 
-- True Positive (TP)(Top-left box): The model was able to correctly predict 782 instances of a positive cancer diagnosis.
+- **True Positive (TP)(Top-left box)**: The model was able to correctly predict 782 instances of a positive cancer diagnosis.
 782 individuals who did have cancer were correctly identified as having cancer.
-- False Negative (FN)(Top-right box): The model incorrectly predicted 162 instances of a negative cancer diagnosis.162 individuals who had cancer were misclassified, as not having cancer. 
-- False Positive (FP)(Bottom-left box)The model incorrectly predicted 102 instances of a positive cancer diagnosis.
+- **False Negative (FN)(Top-right box)**: The model incorrectly predicted 162 instances of a negative cancer diagnosis.162 individuals who had cancer were misclassified, as not having cancer. 
+- **False Positive (FP)(Bottom-left box)**:The model incorrectly predicted 102 instances of a positive cancer diagnosis.
 102 individuals who did not have cancer were misclassified, as having cancer
-- True Negative (TN)(Bottom-right box) 
-The model was able to correctly predict 455 instances of a negative cancer diagnosis.
+- **True Negative (TN)(Bottom-right box)**:The model was able to correctly predict 455 instances of a negative cancer diagnosis.
 455 individuals who did not have cancer were correctly identified as not having cancer.
 
 The Precision-Recall Curve was used to assess the performance of a model, by analysing its ability to predict the positive class. This makes it useful for unbalanced datasets. The Precision-Recall Curve evaluates the relationship between precision and recall at different thresholds, from 0 to 1. The curve is plotted by estimates of precision-recall pair at these various thresholds. To provide insight into the trade-off between the two metrics. This assists in selecting the best threshold that balances precision and recall in the model (Lyzer, 2024). As seen the below figure 26.
